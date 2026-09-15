@@ -17,30 +17,52 @@ header h1 {
 }
 
 header a {
-    color: rgb(232, 86, 24);
+    color: #e85618;
     text-decoration: none;
 }
 
 .cardapio {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
+    grid-template-columns: repeat(4, 250px);
     gap: 1.5rem;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 .item-cardapio {
-    
+    width: 230px;
+    min-height: 330px;
     border: solid 1px black;
     padding: 10px;
     border-radius: 8px;
 }
 
 .item-imagem img{
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .item-quantia {
     display: flex;
     flex-direction: row;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
+.item-quantia span{
+    border: solid 1px black;
+    width: 150px;
+    text-align: center;
+}
+
+.item-quantia #diminuir-quantia, #aumentar-quantia {
+    border-radius: 15px;
+    align-items: center;
+    border: none;
+    background-color: #e85618;
+}
+
+
