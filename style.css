@@ -56,13 +56,19 @@ header a {
     border: solid 1px black;
     width: 150px;
     text-align: center;
+    border-radius: 18px;
 }
 
-.item-quantia #diminuir-quantia, #aumentar-quantia {
+#diminuir-quantia, #aumentar-quantia {
     border-radius: 15px;
     align-items: center;
     border: none;
     background-color: #e85618;
+}
+
+.adicionar-item {
+    padding: 4px;
+    
 }
 
 
