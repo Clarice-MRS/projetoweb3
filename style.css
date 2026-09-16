@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -7,13 +9,14 @@ header {
     display: flex;
     padding: 40px;
     flex-direction: column;
-    background-color: rgb(60, 55, 55);
+    background-color: #3c3737;
     align-items: center;
     justify-content: center;
 }
 
 header h1 {
     color: rgb(232, 86, 24);
+    font-family: "New Rocker";
 }
 
 header a {
@@ -24,17 +27,30 @@ header a {
 .cardapio {
     display: grid;
     grid-template-columns: repeat(4, 250px);
-    gap: 1.5rem;
+    gap: 2rem;
     margin: 0 auto;
     justify-content: center;
 }
 
 .item-cardapio {
+    display: flex;
+    flex-direction: column;
     width: 230px;
     min-height: 330px;
-    border: solid 1px black;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: none;
     padding: 10px;
     border-radius: 8px;
+    background-color: #bfbfbf;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .item-imagem img{
@@ -53,13 +69,17 @@ header a {
 }
 
 .item-quantia span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: solid 1px black;
+    background-color: white;
     width: 150px;
-    text-align: center;
     border-radius: 18px;
 }
 
-#diminuir-quantia, #aumentar-quantia {
+.diminuir-quantia, .aumentar-quantia {
+    font-size: 25px;
     border-radius: 15px;
     align-items: center;
     border: none;
@@ -67,8 +87,21 @@ header a {
 }
 
 .adicionar-item {
-    padding: 4px;
-    
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #e85618;
 }
 
+#botao-sacola i {
+    color: white;
+}
 
+#botao-sacola {
+    padding: 20px;
+    font-size: 50px;
+    border-radius: 50px;
+    background-color: #e85618;
+    border: none;
+}
