@@ -24,15 +24,15 @@ header a {
     text-decoration: none;
 }
 
-.cardapio {
+#cardapio {
     display: grid;
-    grid-template-rows: 2;
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+    width: 80%;
     margin: 0 auto;
-    justify-content: center;
 }
 
-.item-cardapio {
+.item-card {
     display: flex;
     flex-direction: column;
     width: 230px;

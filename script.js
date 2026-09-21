@@ -1,3 +1,5 @@
+/* ARRAY DE ITENS DO CARDÁPIO*/
+
 const pratos = [
     {
         nome: "The Fame Free",
@@ -168,44 +170,40 @@ const pratos = [
     }
 ];
 
-const maisum = document.querySelector(".aumentar-quantia");
-const menosum = document.querySelector(".diminuir-quantia");
-const quantia = document.getElementById("valor-quantia");
+/*** CRIAR CARDS DO CARDÁPIO ***/
 
-function aumentarSacola() {
+function criarCardapio() {
 
-    let quantidade = Number(quantia.textContent);
+    console.log("testando-funcao-chamada");
 
-    if (quantidade < 50) {
-        quantidade++;
-    }
+    for(const prato of pratos) {
 
-    quantia.textContent = quantidade;
+        const cardsCardapio = document.getElementById("cardapio");
+        cardsCardapio.innerHTML += ` 
+        <div class="item-card">
+            <div class="item-info">  
+                    <img src="${prato.imagem}"> 
+                    <h3 class="nome">${prato.nome}</h3>  
+                    <p class="valor">R$ ${prato.valor}0</p>  
+                    <p class="descricao">${prato.descricao}</p> 
+            </div>
+            <div class="item-quantia">
+                <button type="button" class="diminuir-quantia"><i class="bi bi-dash"></i></button>
+                <span id="valor-quantia">0</span>
+                <button type="button" class="aumentar-quantia"><i class="bi bi-plus"></i></button>
+                <button class="adicionar-item">Adicionar</button>
+            </div>
+        </div>
+    `;
+    }    
 }
 
-maisum.addEventListener("click", aumentarSacola);
+criarCardapio();
 
-function diminuirSacola() {
-    let quantidade = Number(quantia.textContent);
+console.log("testando-evento");
 
-    if (quantidade > 0) {
-        quantidade--;
-    }
+const cardapio = document.getElementById("cardapio");
 
-    quantia.textContent = quantidade;
-}
-
-menosum.addEventListener("click", diminuirSacola);
-
-const infoPratos = document.querySelector(".item-info");
-
-
-
-infoPratos.innerHTML = ` 
-    <div class="prato-cardapio">  
-            <img src="${pratos[0].imagem}"> 
-            <h3 class="nome">${pratos[0].nome}</h3>  
-            <p class="valor">${pratos[0].valor}</p>  
-            <p class="descricao">${pratos[0].descricao}</p> 
-    </div> 
-`;
+cardapio.addEventListener("click", (evento) => {
+    console.log(evento.target);
+});
